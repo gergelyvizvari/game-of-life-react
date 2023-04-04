@@ -15,6 +15,21 @@ export default function GameOfLife() {
     const [cellMap, setCellMap] = useState<number[]>([])
     const [size, setSize] = useState<number>(1)
 
+    const resizeWindow = useCallback(()=>{
+        if (containerRef.current) {
+            setSize(containerRef.current.offsetWidth / (columns + 1));
+        }
+    }, [containerRef]);
+
+    useEffect(() => {    
+        window.addEventListener('resize', resizeWindow);
+
+        ()=>{
+            window.removeEventListener('resize', resizeWindow);
+        }
+    }, [])
+    
+
     const nextCycle = useCallback(() => {
         const now = performance.now();
         const delta = now - lastTime;
@@ -45,7 +60,7 @@ export default function GameOfLife() {
         lastTime = performance.now();
 
         if (containerRef.current) {
-            setSize(containerRef.current.offsetWidth / columns);
+            resizeWindow();
             nextCycle();
         }
 

@@ -3,8 +3,8 @@ import { _ as __vitePreload } from './preload-helper-8dea4d1a.js';
 const exportSet = new Set(['Module', '__esModule', 'default', '_export_sfc']);
       let moduleMap = {
 "./GameOfLife":()=>{
-      dynamicLoadingCss(["style-dbf7cf7d.css"]);
-      return __federation_import('./__federation_expose_GameOfLife-f6652516.js').then(module =>Object.keys(module).every(item => exportSet.has(item)) ? () => module.default : () => module)},};
+      dynamicLoadingCss(["style-a3ee5fe6.css"]);
+      return __federation_import('./__federation_expose_GameOfLife-724a8e93.js').then(module =>Object.keys(module).every(item => exportSet.has(item)) ? () => module.default : () => module)},};
     const seen = {};
     const dynamicLoadingCss = (cssFilePaths) => {
       const metaUrl = import.meta.url;
