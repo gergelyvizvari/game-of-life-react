@@ -1,7 +1,7 @@
 
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import federation from "@originjs/vite-plugin-federation"
+import federation, { Shared } from "@originjs/vite-plugin-federation"
 
 // https://vitejs.dev/config/
 export default defineConfig({  
@@ -14,7 +14,7 @@ export default defineConfig({
       exposes: {
         './GameOfLife': './src/GameOfLife.tsx',
       },
-      shared: { react:{ singleton: true }, "react-dom":{ singleton: true } },
+      shared: { react:{ singleton: true }, "react-dom":{ singleton: true }, tailwindcss: {singleton: true} } as Shared,
     })
   ],
   build: {

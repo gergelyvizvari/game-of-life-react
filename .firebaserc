@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "game-of-life-react-fdad5",
+    "react-examples": "game-of-life-react-fdad5"
+  },
+  "targets": {},
+  "etags": {}
+}
